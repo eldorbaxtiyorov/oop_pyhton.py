@@ -1,0 +1,35 @@
+class Avto:
+    def __init__(self,model,rang,narh) :
+        self.model=model
+        self.rang=rang
+        self.karobka='avtomat'
+        self.narh=narh
+        self.kilometr=0
+    def get_info(self):
+        return f"model:{self.model}, rang:{self.rang}, karobka:{self.karobka}, narh:{self.narh}, kilometr:{self.kilometr}"
+    def update_km(self):
+        self.kilometr+=1  
+class Avtosalon:
+    def __init__(self,name,location,year) :
+        self.name=name
+        self.year=year
+        self.location=location
+        self.avto_number=0
+        self.avto_names=[]
+        self.avto_prices={'Cobalt':10000}
+    def get_info_a(self):
+        return f"avtosalon:{self.name}, location:{self.location}, cars:{self.avto_names}, cars_num:{self.avto_number}, prices:{self.avto_prices}"
+    
+    def update_avto(self,avto_name):
+        self.avto_names.append(avto_name)
+        self.avto_number+=1
+    
+    
+    
+avtosalon1=Avtosalon('Gurlan Avtosalon', 'Xorazm vil. Gurlan tumani',2011)
+avtosalon1.update_avto('Cobalt')
+print(avtosalon1.get_info_a()) 
+print(dir(Avto))
+print(dir(Avtosalon)) 
+print(avtosalon1.__dict__.keys())    
+ 
